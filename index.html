@@ -18,6 +18,7 @@
       text-align: center;
     }
 
+    /* one - slides in */
     .one {
       position: relative;
       padding: 1rem 1rem;
@@ -37,13 +38,44 @@
       bottom: 20%;
       left: -100%;
       background: pink;
-      transition: 1s cubic-bezier(0, 0.79, 0.6, 1.49);
+      transition: 1s cubic-bezier(0, 0.79, 0.8, 1.0);
 
     }
 
     .one:hover::after {
       /* transform: translatex(100%); */
       left: 20%;
+      background: red;
+    }
+
+    /* one' - grows */
+
+    .oneprim {
+      position: relative;
+      padding: 1rem 1rem;
+      margin: 100px;
+      font-size: 20px;
+      border-style: none;
+      background: none;
+      overflow: hidden;
+      transition: 1s;
+    }
+
+    .oneprim::after {
+      content: '';
+      position: absolute;
+      height: 4px;
+      width: 0%;
+      bottom: 20%;
+      left: 20%;
+      background: pink;
+      transition: 1s cubic-bezier(0, 0.79, 0.8, 1.0);
+
+    }
+
+    .oneprim:hover::after {
+      /* transform: translatex(100%); */
+      width: 60%;
       background: red;
     }
 
@@ -166,6 +198,7 @@
 
 <body>
   <button class="one">Button One</button>
+  <button class="oneprim">Button One</button>
   <button class="two">Button Two</button>
   <button class="three">Button Three</button>
   <button class="four">Button Four</button>
