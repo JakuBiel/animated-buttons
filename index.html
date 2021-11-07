@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible"
+    content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      text-align: center;
+    }
+
+    .one {
+      position: relative;
+      padding: 1rem 1rem;
+      margin: 100px;
+      font-size: 20px;
+      border-style: none;
+      background: none;
+      overflow: hidden;
+      transition: 1s;
+    }
+
+    .one::after {
+      content: '';
+      position: absolute;
+      height: 4px;
+      width: 60%;
+      bottom: 20%;
+      left: -100%;
+      background: pink;
+      transition: 1s cubic-bezier(0, 0.79, 0.6, 1.49);
+
+    }
+
+    .one:hover::after {
+      /* transform: translatex(100%); */
+      left: 20%;
+      background: red;
+    }
+
+    /* two */
+
+    .two {
+      position: relative;
+      padding: 1rem 1rem;
+      margin: 100px;
+      font-size: 20px;
+      border-style: none;
+      background: none;
+      color: red;
+      overflow: hidden;
+      transition: 1s .4s;
+
+    }
+
+    .two::before {
+      content: 'bold me!';
+      position: absolute;
+      height: 40%;
+      width: 110%;
+      bottom: calc(100%-40%/2);
+      left: -100%;
+      background: white;
+      color: red;
+      transition: 1.5s ease-in-out;
+      z-index: 1;
+    }
+
+    .two:hover::before {
+      /* transform: translatex(100%); */
+      left: 100%;
+      background: white;
+
+    }
+
+    .two:hover {
+      font-weight: 600;
+    }
+
+    /* THREE */
+
+    .three {
+      display: inline-block;
+      position: relative;
+      padding: 1rem 1rem;
+      margin: 100px;
+      font-size: 20px;
+      border-style: none;
+      background: none;
+      overflow: hidden;
+      transition: .5s;
+
+    }
+
+    .three::before {
+      display: block;
+      content: attr(title);
+      font-weight: bold;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
+
+    /* .three::after {
+      content: '';
+      position: absolute;
+      height: calc(100% - 8px);
+      width: calc(100% - 8px);
+      bottom: 0px;
+      border: 4px red solid;
+      left: 0px;
+      transition: 1s ease-out;
+      opacity: 0;
+    }
+
+    .three:hover::after {
+      opacity: 1;
+    } */
+
+    .three:hover {
+      Color: red;
+      font-weight: bold;
+    }
+
+    /* FOUR */
+
+    .four {
+      position: relative;
+      padding: 1rem 1rem;
+      margin: 100px;
+      font-size: 20px;
+      border-style: none;
+      /* background: #ddd; */
+      /* overflow: hidden; */
+      transition: 1s;
+    }
+
+    .four::after {
+      content: '';
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      bottom: 0;
+      left: -100%;
+      background: pink;
+      transition: 1s ease-out;
+    }
+
+    .four:hover::after {
+      /* transform: translatex(100%); */
+      left: 0;
+      background: red;
+    }
+  </style>
+  <title>Document</title>
+</head>
+
+<body>
+  <button class="one">Button One</button>
+  <button class="two">Button Two</button>
+  <button class="three">Button Three</button>
+  <button class="four">Button Four</button>
+</body>
+
+</html>
