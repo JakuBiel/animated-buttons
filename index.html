@@ -121,51 +121,41 @@
     /* THREE */
 
     .three {
-      display: inline-block;
+      display: block;
       position: relative;
       padding: 1rem 1rem;
       margin: 100px;
       font-size: 20px;
+      line-height: 30px;
       border-style: none;
       background: none;
       overflow: hidden;
       transition: .5s;
-
+      border: 2px black solid;
     }
 
     .three::before {
-      display: block;
-      content: attr(title);
-      font-weight: bold;
-      height: 0;
-      overflow: hidden;
-      visibility: hidden;
-    }
-
-    /* .three::after {
       content: '';
       position: absolute;
-      height: calc(100% - 8px);
-      width: calc(100% - 8px);
-      bottom: 0px;
-      border: 4px red solid;
-      left: 0px;
-      transition: 1s ease-out;
-      opacity: 0;
-    }
-
-    .three:hover::after {
+      top: 0;
+      left: -15px;
+      border-left: 15px solid black;
+      border-top: 30px solid transparent;
+      border-bottom: 30px solid transparent;
       opacity: 1;
-    } */
-
-    .three:hover {
-      Color: red;
-      font-weight: bold;
+      transition: .3s;
     }
+
+    .three:hover::before {
+      opacity: 1;
+      left: -2px;
+    }
+
 
     /* FOUR */
 
     .four {
+      /* display: block; */
       position: relative;
       padding: 1rem 1rem;
       margin: 100px;
@@ -183,10 +173,10 @@
       content: '';
       position: absolute;
       height: 6px;
-      width: 100%;
+      width: 102%;
       bottom: 50%;
       transform: translateY(50%);
-      right: -100%;
+      right: -102%;
       background: rgb(128, 11, 11);
       transition: right .3s ease-out, transform .3s linear .3s, height .3s .3s;
       z-index: -1;
@@ -195,7 +185,7 @@
     .four:hover::after {
       right: 0px;
       /* transform: scale(2000%); */
-      height: 110%;
+      height: 115%;
     }
 
     .four:hover {
