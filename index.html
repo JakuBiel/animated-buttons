@@ -15,18 +15,19 @@
     }
 
     body {
-      text-align: center;
+      width: 1000px;
     }
 
     /* one - slides in */
     .one {
+      display: block;
       position: relative;
       padding: 1rem 1rem;
       margin: 100px;
       font-size: 20px;
       border-style: none;
       background: none;
-      overflow: hidden;
+      /* overflow: hidden; */
       transition: 1s;
     }
 
@@ -36,7 +37,7 @@
       height: 4px;
       width: 60%;
       bottom: 20%;
-      left: -100%;
+      left: -70%;
       background: pink;
       transition: 1s cubic-bezier(0, 0.79, 0.8, 1.0);
 
@@ -52,12 +53,13 @@
 
     .oneprim {
       position: relative;
+      display: block;
       padding: 1rem 1rem;
       margin: 100px;
       font-size: 20px;
       border-style: none;
       background: none;
-      overflow: hidden;
+      /* overflow: hidden; */
       transition: 1s;
     }
 
@@ -83,24 +85,25 @@
 
     .two {
       position: relative;
-      padding: 1rem 1rem;
+      display: block;
       margin: 100px;
+      padding: 1rem 1rem;
       font-size: 20px;
-      border-style: none;
+      /* border-style: none; */
       background: none;
       color: red;
-      overflow: hidden;
+      /* overflow: hidden; */
       transition: 1s .4s;
 
     }
 
     .two::before {
       content: 'bold me!';
-      position: relative;
+      position: absolute;
       height: 40%;
       width: 110%;
       bottom: calc(100%-40%/2);
-      left: -100%;
+      left: -120%;
       background: white;
       color: red;
       transition: 1.5s ease-in-out;
@@ -109,7 +112,7 @@
 
     .two:hover::before {
       /* transform: translatex(100%); */
-      left: 100%;
+      left: 120%;
       background: white;
 
     }
@@ -125,44 +128,63 @@
       position: relative;
       padding: 1rem 1rem;
       margin: 100px;
+      width: 160px;
       font-size: 20px;
-      line-height: 30px;
+      line-height: 20px;
       border-style: none;
       background: none;
-      overflow: hidden;
+      /* overflow: hidden; */
       transition: .5s;
       border: 2px black solid;
+
     }
 
     .three::before {
       content: '';
       position: absolute;
       top: 0;
-      left: -15px;
-      border-left: 15px solid black;
-      border-top: 30px solid transparent;
-      border-bottom: 30px solid transparent;
-      opacity: 1;
+      left: 0px;
+      border-left: 16px solid black;
+      border-top: 26px solid transparent;
+      border-bottom: 26px solid transparent;
+      opacity: 0;
+      transition: .3s;
+    }
+
+    .three::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 140px;
+      border-right: 16px solid black;
+      border-top: 26px solid transparent;
+      border-bottom: 26px solid transparent;
+      opacity: 0;
       transition: .3s;
     }
 
     .three:hover::before {
       opacity: 1;
-      left: -2px;
+      /* left: -1%; */
+    }
+
+    .three:hover::after {
+      opacity: 1;
+      /* left: 90%; */
     }
 
 
     /* FOUR */
 
     .four {
-      /* display: block; */
+      display: block;
       position: relative;
       padding: 1rem 1rem;
       margin: 100px;
       font-size: 20px;
       border-style: none;
       background: transparent;
-      overflow: hidden;
+      /* overflow: hidden; */
       transition: 1s;
       border-radius: 12px;
       border: 5px solid black;
@@ -171,7 +193,7 @@
 
     .four::after {
       content: '';
-      position: relative;
+      position: absolute;
       height: 6px;
       width: 102%;
       bottom: 50%;
@@ -196,6 +218,7 @@
 
     .five {
       position: relative;
+      display: block;
       padding: 1rem 1rem;
       margin: 100px;
       font-size: 20px;
@@ -233,13 +256,14 @@
     .six {
       position: relative;
       /* padding: 1rem 1rem; */
+      display: block;
       margin: 100px;
       width: 150px;
       height: 44px;
       font-size: 20px;
       border-style: none;
       background: transparent;
-      overflow: hidden;
+      /* overflow: hidden; */
       transition: 1s linear;
       border: 2px solid black;
       text-align: center;
@@ -259,6 +283,42 @@
       /* transform: translateY(-100%) */
       top: -100%;
     }
+
+    .seven {
+      position: relative;
+      display: block;
+      margin: 100px;
+      border: 2px solid black;
+      width: 150px;
+      height: 44px;
+      background: transparent;
+      font-size: 20px;
+      /* overflow: hidden; */
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .seven span {
+      display: inline-block;
+      line-height: 40px;
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      transition: .2s linear;
+    }
+
+    .seven span:last-child {
+      left: 150px;
+    }
+
+    .seven:hover span:first-child {
+      left: -100%;
+    }
+
+    .seven:hover span:last-child {
+      left: 0;
+    }
   </style>
   <title>Document</title>
 </head>
@@ -272,6 +332,10 @@
   <button class="five">Button Five</button>
   <button class="six"><span>Button
       Six</span><span>Next Txt</span></button>
+
+  <button class="seven"><span>
+      Seven</span><span>Seven'</span></button>
+
 </body>
 
 </html>
