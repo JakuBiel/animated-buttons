@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
+    <title>Document</title>
+    <style>
+        button {
+            font-size: 40px;
+        }
+
+        h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-family: arial;
+            padding: 1rem;
+            transform: translate(-50%, -50%);
+            font-size: 80px;
+            transition: 1s;
+            border: 0 solid black;
+        }
+
+        h1.big {
+            transform: translate(-50%, -50%) scale(2);
+        }
+
+        .larger:hover~h1 {
+            transform: translate(-50%, -50%) scale(2);
+        }
+
+        h1.small {
+            transform: translate(-50%, -50%) scale(.5);
+        }
+
+        .smaller:hover~h1 {
+            transform: translate(-50%, -50%) scale(.5);
+        }
+
+        .border:hover~h1 {
+            border: 20px solid black;
+        }
+
+        h1.border {
+            border: 20px solid black;
+        }
+
+        h1.reset {
+            border: 0px solid black;
+            transform: translate(-50%, -50%) scale(1);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <button class="larger">2 x larger</button>
+    <button class="smaller">2 x smaller</button>
+    <button class="border">border</button>
+    <button class="reset">reset</button>
+    <h1>Text</h1>
+
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(".larger").click(function () {
+            $("H1").toggleClass("big");
+        })
+
+        $(".smaller").click(function () {
+            $("H1").toggleClass("small");
+        })
+
+        $(".border").click(function () {
+            $("H1").toggleClass("border");
+        })
+
+        $(".reset").click(function () {
+            $("H1").toggleClass("reset");
+        })
+    </script>
+</body>
+
+</html>

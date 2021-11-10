@@ -96,7 +96,7 @@
 
     .two::before {
       content: 'bold me!';
-      position: absolute;
+      position: relative;
       height: 40%;
       width: 110%;
       bottom: calc(100%-40%/2);
@@ -171,7 +171,7 @@
 
     .four::after {
       content: '';
-      position: absolute;
+      position: relative;
       height: 6px;
       width: 102%;
       bottom: 50%;
@@ -191,6 +191,74 @@
     .four:hover {
       color: white;
     }
+
+    /* FIVE */
+
+    .five {
+      position: relative;
+      padding: 1rem 1rem;
+      margin: 100px;
+      font-size: 20px;
+      border-style: none;
+      background: transparent;
+      overflow: hidden;
+      transition: 1s;
+      border: 5px solid black;
+      animation: animate1 3s infinite;
+    }
+
+
+    @keyframes animate1 {
+      1% {
+        transform: translateX(10px);
+      }
+
+      2% {
+        transform: translateX(-10px);
+      }
+
+      3% {
+        transform: translateX(10px);
+      }
+
+      4% {
+        transform: translateX(-10px);
+      }
+
+      5% {
+        transform: translateX(0px);
+      }
+    }
+
+    .six {
+      position: relative;
+      /* padding: 1rem 1rem; */
+      margin: 100px;
+      width: 150px;
+      height: 44px;
+      font-size: 20px;
+      border-style: none;
+      background: transparent;
+      overflow: hidden;
+      transition: 1s linear;
+      border: 2px solid black;
+      text-align: center;
+    }
+
+    .six span {
+      display: block;
+      position: relative;
+      line-height: 40px;
+      transition: .2s linear;
+      top: 0;
+      /* padding: 1rem 0; */
+
+    }
+
+    .six:hover span {
+      /* transform: translateY(-100%) */
+      top: -100%;
+    }
   </style>
   <title>Document</title>
 </head>
@@ -201,6 +269,9 @@
   <button class="two">Button Two</button>
   <button class="three">Button Three</button>
   <button class="four">Button Four</button>
+  <button class="five">Button Five</button>
+  <button class="six"><span>Button
+      Six</span><span>Next Txt</span></button>
 </body>
 
 </html>
